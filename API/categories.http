@@ -1,0 +1,68 @@
+@baseUrl=http://localhost:3000
+
+@resourceName=products
+
+
+// @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+
+// @name filter
+GET {{baseUrl}}/{{resourceName}}?price_gte=200&price_lte=500
+# GET {{baseUrl}}/{{resourceName}}?color=Fresh
+
+###
+
+// @name filterInclude
+GET {{baseUrl}}/{{resourceName}}?name_like=Elegant
+
+###
+
+// @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+// @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+###
+
+
+// @name addNew
+POST  {{baseUrl}}/{{resourceName}}
+Content-Type:application/json
+{
+    "categoryID": "d9c4e02b-baa7-4709-95f8-2456dc5a1daf",
+    "name": "Small Fresh Cheese",
+    "color": "Soft",
+    "price": "500",
+    "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "image": "https://picsum.photos/seed/RG2aQTkX6/400/400",
+    "company": "Trung tâm Tô"
+}
+
+###
+
+// @name update
+PUT  {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+{
+  "name":"New Laptop"
+}
+
+###
+
+// @name delete
+DELETE   {{baseUrl}}/{{resourceName}}/2
+
+###
+
+// @name post
+POST{{baseUrl}}/favorite
+Content-Type: application/json
+{
+  "name":"New Laptop"
+}

@@ -1,0 +1,60 @@
+@baseUrl=http://localhost:3000
+
+@resourceName=provinces
+@allHotels=hotels
+
+
+// @name getAll
+GET {{baseUrl}}/{{resourceName}}/${id}/hotels
+
+###
+
+
+// @name filter
+GET {{baseUrl}}/{{allHotels}}?numberOfRoom_gte=35
+# GET {{baseUrl}}/{{resourceName}}?location=Hanoi
+
+###
+
+// @name filterInclude
+GET {{baseUrl}}/{{resourceName}}?location_like=phan&location_like=thiet
+
+###
+
+// @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+###
+
+// @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+###
+
+
+// @name addNew
+POST  {{baseUrl}}/{{resourceName}}
+Content-Type:application/json
+{
+    "categoryID": "d9c4e02b-baa7-4709-95f8-2456dc5a1daf",
+    "name": "Small Fresh Cheese",
+    "color": "Soft",
+    "price": "500",
+    "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+    "image": "https://picsum.photos/seed/RG2aQTkX6/400/400",
+    "company": "Trung tâm Tô"
+}
+
+###
+
+// @name update
+PUT  {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+{
+  "name":"New Laptop"
+}
+
+###
+
+// @name delete
+DELETE   {{baseUrl}}/{{resourceName}}/2

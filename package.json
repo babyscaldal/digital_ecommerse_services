@@ -1,0 +1,26 @@
+{
+  "name": "hotel-api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run generate-data && node main.js",
+    "dev": "nodemon main.js",
+    "generate-data": "node generate-data.js"
+  },
+  "keywords": [
+    "json-server"
+  ],
+  "author": "son nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.3",
+    "query-string": "^8.1.0",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "nodemon": "^3.0.1"
+  }
+}
